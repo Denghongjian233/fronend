@@ -1,13 +1,15 @@
-const array = []
-const  fn = (arr)=>{
-    for(let i = 0;i<arr.length; i++){
-        if(Array.isArray(arr[i])){
-            fn(arr[i])
-        }
-        else {
-            array.push(arr[i])
-        }
+let id = 'GLOBAL'
+var obj = {
+    id : 'obj',
+    a:function(){
+        console.log(this.id)
+    },
+    b:()=>{
+        console.log(this.id)
     }
 }
-fn(arr)
-console.log(array)
+obj.a()
+obj.b()
+console.log(obj.b)
+new obj.a()
+new obj.b()
